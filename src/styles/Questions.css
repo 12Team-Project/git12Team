@@ -1,0 +1,32 @@
+.Questions-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin: 0 auto 58px;
+  max-width: 716px;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid #c7bbb5;
+  background-color: #f2ede9;
+}
+
+.Questions-container.noQuestion {
+  width: 100%;
+  align-items: center;
+  gap: 70px;
+  height: 330px;
+}
+
+.Questions-numberOfQuestions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 20px;
+  color: #542f1a;
+}
+
+.Questions-emptyMessageIcon {
+  width: 150px;
+}

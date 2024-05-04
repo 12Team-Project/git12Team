@@ -1,0 +1,48 @@
+@import "reset.css";
+
+.Header-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 234px;
+  overflow: hidden;
+}
+
+.Header-backgroundImage {
+  flex: 1;
+}
+
+.Header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 12px;
+}
+
+.Header-logo {
+  width: 170px;
+  height: 67px;
+}
+
+.Header-profileImage {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+}
+
+.Header-userName {
+  font-size: 32px;
+}
+
+.Header-shareLink {
+  display: flex;
+  gap: 12px;
+}
+
+.Header-shareIcon {
+  cursor: pointer;
+}

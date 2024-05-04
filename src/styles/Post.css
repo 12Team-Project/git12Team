@@ -1,0 +1,10 @@
+@import "reset.css";
+
+.Post-background {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: end;
+  padding: 189px 24px 24px;
+  background-color: #f7f7f7;
+}

@@ -1,0 +1,13 @@
+.AnswerBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid #542f1a;
+  font-size: 14px;
+  color: #542f1a;
+}
+
+.AnswerBadge-NoAnswer {
+  border: 1px solid #818181;
+  color: #818181;
+}

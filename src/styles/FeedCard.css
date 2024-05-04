@@ -1,0 +1,76 @@
+.FeedCard {
+  padding: 32px;
+  margin-top: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(140, 140, 140, 0.25);
+  border-radius: 16px;
+  background-color: white;
+}
+
+.FeedCard-question {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 32px;
+  font-size: 18px;
+}
+
+.FeedCard-CreatedAt {
+  color: #818181;
+  font-size: 14px;
+}
+
+.FeedCard-answer {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 32px;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.FeedCard-username {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.FeedCard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.FeedCard-rejected {
+  color: #b93333;
+}
+
+.FeedCard-reactionContainer {
+  display: flex;
+  padding-top: 25px;
+  margin-top: 32px;
+  gap: 32px;
+  border-top: 1px solid #cfcfcf;
+}
+
+.FeedCard-reaction {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #818181;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.FeedCard-reactionIcon {
+  width: 16px;
+}
+
+.FeedCard-reaction.clicked {
+  color: #1877f2;
+}
+
+.FeedCard-profileImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
