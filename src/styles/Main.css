@@ -1,101 +1,101 @@
-main {
-    height: 100vh;
-    background-image: url(../assets/images/Image2.svg);
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100%;
+.main {
+  height: 100vh;
+  background-image: url(../assets/images/Image2.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
 }
 
-header {
-    position: relative;
-    padding-top: 150px;
-    text-align: center;
+.main-header {
+  position: relative;
+  padding-top: 150px;
+  text-align: center;
 }
 
 .main_top_btn {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    padding: 12px 24px;
-    border-radius: 8px;
-    background-color: #f5f1ee;
-    border: 1px solid #542f1a;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: #f5f1ee;
+  border: 1px solid #542f1a;
 }
 
 .main_top_btn a {
-    display: flex;
-    align-items: center;
-    color: #542f1a;
+  display: flex;
+  align-items: center;
+  color: #542f1a;
 }
 
 .main_container .main_login_box {
-    margin: 0 auto;
-    padding: 32px;
-    width: 400px;
-    background-color: #fff;
-    border-radius: 16px;
+  margin: 0 auto;
+  padding: 32px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 16px;
 }
 
 .main_container .main_login_box .input_form {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #818181;
-    border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #818181;
+  border-radius: 8px;
 }
 
 .main_container .main_login_box .input_form input {
-    display: block;
-    width: 100%;
-    height: 100%;
-    outline: none;
-    border: 0;
-    padding: 0 0 0 10px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 0;
+  padding: 0 0 0 10px;
 }
 
 .main_container .main_login_box .input_form span img {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 .main_container .main_login_box .input_button button {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #542f1a;
-    border-radius: 8px;
-    transition: all 0.5s;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #542f1a;
+  border-radius: 8px;
+  transition: all 0.5s;
 }
 
 .main_container .main_login_box .input_button button a {
-    color: #fff;
+  color: #fff;
 }
 
 .main_container .main_login_box .input_button button:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 @media (max-width: 767px) {
-    header {
-        display: flex;
-        flex-direction: column;
-    }
+  header {
+    display: flex;
+    flex-direction: column;
+  }
 
-    header .main_header_logo {
-        margin: 0 auto;
-        width: 50%;
-    }
+  header .main_header_logo {
+    margin: 0 auto;
+    width: 50%;
+  }
 
-    .main_top_btn {
-        margin: 20px auto;
-        position: relative;
-        top: auto;
-        right: auto;
-    }
+  .main_top_btn {
+    margin: 20px auto;
+    position: relative;
+    top: auto;
+    right: auto;
+  }
 }
 
 @media (max-width: 800px) {
-    .small-tomato {
-        background-color: tomato;
-    }
+  .small-tomato {
+    background-color: tomato;
+  }
 }
