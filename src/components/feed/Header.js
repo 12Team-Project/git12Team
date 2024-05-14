@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { shareKakaoLink } from "../../utils/shareKakaoLink";
+import shareKakaoLink from "../../utils/shareKakaoLink";
 
 import "../../styles/Header.css";
 

@@ -3,7 +3,7 @@ import Header from "../components/feed/Header";
 import { getQuestionList } from "../api/api";
 import { getUserData } from "../api/api";
 import { useState, useEffect } from "react";
-import { AnswerList } from "../components/feed/answer/AnswerList";
+import AnswerList from "../components/feed/answer/AnswerList";
 import { useParams } from "react-router-dom";
 
 export default function AnswerPage() {
