@@ -13,7 +13,7 @@ const QuestionList = ({ userData, id }) => {
     useEffect(() => {
         fetchData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [questions]);
 
     const fetchData = async () => {
         setLoading(true);

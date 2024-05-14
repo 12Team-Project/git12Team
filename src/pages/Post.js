@@ -42,7 +42,7 @@ export default function PostPage() {
     useEffect(() => {
         fetchQuestionList();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [questionList]);
 
     const openModal = () => setIsModalOpen(true);
 
