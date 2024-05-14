@@ -36,6 +36,20 @@ export async function getQuestionList(subjectId, nextPage = "") {
     }
 }
 
+export async function getAllQuestionList(subjectId) {
+    try {
+        const url = `${BASE_URL}/subjects/${subjectId}/questions/`;
+        const res = await axios.get(url, {
+            params: {
+                limit: 30,
+            },
+        });
+        return res.data;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 export async function addQuestion(subjectId, questionData) {
     try {
         const res = await axios.post(
