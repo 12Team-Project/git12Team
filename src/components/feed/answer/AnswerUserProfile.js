@@ -1,12 +1,12 @@
-import timeString from "../../utils/timeString";
+import timeString from "../../../utils/timeString";
 
-const AnswerUserProfile = ({
+export default function AnswerUserProfile({
     imageSource,
     name,
     answerCreatedAt,
     children,
     hasAnswer,
-}) => {
+}) {
     const answerFormattedDate = timeString(answerCreatedAt);
 
     return (
@@ -29,6 +29,4 @@ const AnswerUserProfile = ({
             </div>
         </div>
     );
-};
-
-export default AnswerUserProfile;
+}

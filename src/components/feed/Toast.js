@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-import "../styles/Toast.css";
+import "../../styles/Toast.css";
 
-function Toast({ setIsToasting }) {
+export default function Toast({ setIsToasting }) {
     useEffect(() => {
         let timer = setTimeout(() => {
             setIsToasting(false);
@@ -19,5 +19,3 @@ function Toast({ setIsToasting }) {
         </div>
     );
 }
-
-export default Toast;

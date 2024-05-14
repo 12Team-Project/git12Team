@@ -1,4 +1,4 @@
-function timeString(time) {
+export default function timeString(time) {
     const currentDate = new Date();
     const createdDate = new Date(time);
 
@@ -21,5 +21,3 @@ function timeString(time) {
         return "방금 전";
     }
 }
-
-export default timeString;

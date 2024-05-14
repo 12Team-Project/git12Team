@@ -3,7 +3,7 @@ import "../../styles/Feed.css";
 import messageIconBrown from "../../assets/icons/Messages-brown.svg";
 import emptyMessageIcon from "../../assets/icons/Empty-message.svg";
 
-const NoQuestion = () => {
+export default function NoQuestion() {
     return (
         <div className="Questions-container noQuestion">
             <span className="Questions-numberOfQuestions">
@@ -17,6 +17,4 @@ const NoQuestion = () => {
             />
         </div>
     );
-};
-
-export default NoQuestion;
+}

@@ -1,14 +1,14 @@
 import { useState } from "react";
-import "../../styles/AnswerInputForm.css";
+import "../../../styles/AnswerInputForm.css";
 
-const AnswerInputForm = ({
+export default function AnswerInputForm({
     data,
     isEdit,
     onPostAnswer,
     onEditAnswer,
     answerContent,
     setAnswerContent,
-}) => {
+}) {
     const initialValue = answerContent || [];
 
     const [inputValue, setInputValue] = useState(initialValue);
@@ -50,13 +50,10 @@ const AnswerInputForm = ({
                 <button
                     type="submit"
                     className={`answer-inputButton ${active && "active"}`}
-                    disabled={!active}
-                >
+                    disabled={!active}>
                     {isEdit ? "수정 완료" : "답변 완료"}
                 </button>
             </form>
         </div>
     );
-};
-
-export default AnswerInputForm;
+}

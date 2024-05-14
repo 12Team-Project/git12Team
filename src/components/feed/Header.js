@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { shareKakaoLink } from "../utils/shareKakaoLink";
+import { shareKakaoLink } from "../../utils/shareKakaoLink";
 
-import "../styles/Header.css";
+import "../../styles/Header.css";
 
 import Toast from "./Toast";
-import headerBackgroundImage from "../assets/images/Image2.svg";
-import headerLogo from "../assets/images/logo.svg";
-import shareCopy from "../assets/icons/Link.svg";
-import shareKakao from "../assets/icons/Kakao.svg";
-import shareFacebook from "../assets/icons/Facebook.svg";
+import headerBackgroundImage from "../../assets/images/Image2.svg";
+import headerLogo from "../../assets/images/logo.svg";
+import shareCopy from "../../assets/icons/Link.svg";
+import shareKakao from "../../assets/icons/Kakao.svg";
+import shareFacebook from "../../assets/icons/Facebook.svg";
 
-const Header = ({ userData }) => {
+export default function Header({ userData }) {
     const [isToasting, setIsToasting] = useState(false);
 
     const currentUrl = window.location.href;
@@ -67,9 +67,7 @@ const Header = ({ userData }) => {
                         className="Header-shareIcon"
                         src={shareKakao}
                         alt="shareKakao"
-                        onClick={() =>
-                            shareKakaoLink(currentUrl, userData)
-                        }
+                        onClick={() => shareKakaoLink(currentUrl, userData)}
                     />
                     <img
                         className="Header-shareIcon"
@@ -88,6 +86,4 @@ const Header = ({ userData }) => {
             </div>
         </header>
     );
-};
-
-export default Header;
+}

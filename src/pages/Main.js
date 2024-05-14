@@ -70,47 +70,45 @@ export default function MainPage() {
     };
 
     return (
-        <>
-            <main className="main-main">
-                <header className="main-header">
-                    <img
-                        className="main_header_logo"
-                        src={LogoImg}
-                        alt="로고이미지"
-                    />
-                    <button className="main_top_btn">
-                        <Link to="/list">
-                            질문하러 가기
-                            <span>
-                                <img src={ArrowRightIcon} alt="로고이미지" />
-                            </span>
-                        </Link>
-                    </button>
-                </header>
-                <div className="main_container">
-                    <div className="main_login_box">
-                        <div className="input_form">
-                            <span>
-                                <img src={PersonIcon} alt="로고이미지" />
-                            </span>
-                            <input
-                                type="text"
-                                placeholder="이름을 입력하세요."
-                                onChange={onChangeInput}
-                                onKeyDown={(e) => {
-                                    if (e.keyCode === 13) {
-                                        postNewUser();
-                                    }
-                                }}
-                                value={inputName}
-                            />
-                        </div>
-                        <div className="input_button">
-                            <button onClick={postNewUser}>질문 받기</button>
-                        </div>
+        <main className="main-main">
+            <header className="main-header">
+                <img
+                    className="main_header_logo"
+                    src={LogoImg}
+                    alt="로고이미지"
+                />
+                <button className="main_top_btn">
+                    <Link to="/list">
+                        질문하러 가기
+                        <span>
+                            <img src={ArrowRightIcon} alt="로고이미지" />
+                        </span>
+                    </Link>
+                </button>
+            </header>
+            <div className="main_container">
+                <div className="main_login_box">
+                    <div className="input_form">
+                        <span>
+                            <img src={PersonIcon} alt="로고이미지" />
+                        </span>
+                        <input
+                            type="text"
+                            placeholder="이름을 입력하세요."
+                            onChange={onChangeInput}
+                            onKeyDown={(e) => {
+                                if (e.keyCode === 13) {
+                                    postNewUser();
+                                }
+                            }}
+                            value={inputName}
+                        />
+                    </div>
+                    <div className="input_button">
+                        <button onClick={postNewUser}>질문 받기</button>
                     </div>
                 </div>
-            </main>
-        </>
+            </div>
+        </main>
     );
 }

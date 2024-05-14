@@ -4,9 +4,9 @@ import "./styles/App.css";
 import "./styles/Basic.css";
 
 export default function App() {
-  return (
-    <>
-      <Router />
-    </>
-  );
+    return (
+        <>
+            <Router />
+        </>
+    );
 }

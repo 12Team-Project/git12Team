@@ -1,4 +1,4 @@
-export const shareKakaoLink = (route, userData) => {
+export default function shareKakaoLink(route, userData) {
     if (window.Kakao) {
         const kakao = window.Kakao;
         if (!kakao.isInitialized()) {
@@ -27,4 +27,4 @@ export const shareKakaoLink = (route, userData) => {
             ],
         });
     }
-};
+}

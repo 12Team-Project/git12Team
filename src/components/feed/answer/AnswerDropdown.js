@@ -1,6 +1,6 @@
-import moreIcon from "../../assets/icons/More.svg";
+import moreIcon from "../../../assets/icons/More.svg";
 
-const AnswerDropdown = ({
+export default function AnswerDropdown({
     handleDeleteQuestion,
     handleEditClick,
     handleRejectAnswer,
@@ -9,7 +9,7 @@ const AnswerDropdown = ({
     hasAnswer,
     isRejected,
     isEdit,
-}) => {
+}) {
     return (
         <div className="Answer-dropdown" onClick={(e) => e.stopPropagation()}>
             <button
@@ -42,6 +42,4 @@ const AnswerDropdown = ({
             </div>
         </div>
     );
-};
-
-export default AnswerDropdown;
+}

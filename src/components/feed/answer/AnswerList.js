@@ -1,33 +1,44 @@
 import FeedCardAnswer from "./FeedCardAnswer";
-import "../../styles/Feed.css";
-import "../../styles/AnswerList.css";
-import messageIconBrown from "../../assets/icons/Messages-brown.svg";
-import emptyMessageIcon from "../../assets/icons/Empty-message.svg";
-import { deleteQuestion, deleteUserData } from "../../api/api";
+import "../../../styles/Feed.css";
+import "../../../styles/AnswerList.css";
+import messageIconBrown from "../../../assets/icons/Messages-brown.svg";
+import NoQuestion from "../NoQuestion";
+import { deleteQuestion, deleteUserData } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
 
-export const AnswerList = ({
+export default function AnswerList({
     subjectId,
     userData,
     questionList,
     rendering,
     setRendering,
-}) => {
+    loading,
+    handleLoadMore,
+    nextPage,
+}) {
     const navigate = useNavigate();
 
-    const handleDeleteFeed = () => {
-        deleteUserData(subjectId);
+    const handleDeleteFeed = async () => {
+        try {
+            await deleteUserData(subjectId);
+        } catch (e) {
+            console.log(e.message);
+        }
         navigate("/");
     };
     const handleDeleteQuestion = async (questionId) => {
-        await deleteQuestion(questionId);
+        try {
+            await deleteQuestion(questionId);
+        } catch (e) {
+            console.log(e.message);
+        }
         setRendering(!rendering);
     };
 
     return (
         <>
             {userData.questionCount > 0 ? (
-                <div className="answer-container">
+                <>
                     <div className="answer-top-wrapper">
                         <button onClick={handleDeleteFeed}>삭제하기</button>
                     </div>
@@ -39,7 +50,7 @@ export const AnswerList = ({
                             />{" "}
                             {userData.questionCount}개의 질문이 있습니다
                         </span>
-                        {questionList.results.map((item) => {
+                        {questionList.map((item) => {
                             return (
                                 <FeedCardAnswer
                                     key={item.id}
@@ -51,29 +62,24 @@ export const AnswerList = ({
                                 />
                             );
                         })}
+                        {loading && <div className="LoadMore">...</div>}
+                        {!loading && nextPage && (
+                            <div
+                                className="LoadMore button"
+                                onClick={handleLoadMore}>
+                                더보기
+                            </div>
+                        )}
                     </div>
-                </div>
+                </>
             ) : (
-                <div className="answer-container">
+                <>
                     <div className="answer-top-wrapper">
                         <button onClick={handleDeleteFeed}>삭제하기</button>
                     </div>
-                    <div className="Questions-container noQuestion">
-                        <span className="Questions-numberOfQuestions">
-                            <img
-                                src={messageIconBrown}
-                                alt="messageIconBrown"
-                            />{" "}
-                            아직 질문이 없습니다
-                        </span>
-                        <img
-                            className="Questions-emptyMessageIcon"
-                            src={emptyMessageIcon}
-                            alt="emptyMessageIcon"
-                        />
-                    </div>
-                </div>
+                    <NoQuestion />
+                </>
             )}
         </>
     );
-};
+}

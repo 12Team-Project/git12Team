@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
-import "../../styles/FeedCard.css";
-import "../../styles/FeedCardAnswer.css";
-import AnswerBadge from "./AnswerBadge";
-import timeString from "../../utils/timeString";
+import "../../../styles/FeedCard.css";
+import "../../../styles/FeedCardAnswer.css";
+import AnswerBadge from "../AnswerBadge";
+import timeString from "../../../utils/timeString";
 import AnswerInputForm from "./AnswerInputForm";
-import { editAnswer, postAnswer } from "../../api/api";
+import { editAnswer, postAnswer } from "../../../api/api";
 import AnswerUserProfile from "./AnswerUserProfile";
 import AnswerContent from "./AnswerContent";
 import AnswerDropdown from "./AnswerDropdown";
-import Reactions from "./Reactions";
+import Reactions from "../Reactions";
 
-const FeedCardAnswer = ({
+export default function FeedCardAnswer({
     data,
     userData,
     rendering,
     setRendering,
     onDeleteQuestion,
-}) => {
+}) {
     const {
         id,
         content,
@@ -50,27 +50,40 @@ const FeedCardAnswer = ({
         onDeleteQuestion(id);
     };
 
-    const handleRejectAnswer = () => {
-        postAnswer(id, {
-            questionId: id,
-            content: "rejected",
-            isRejected: true,
-            team: "6-12",
-        });
+    const handleRejectAnswer = async () => {
+        try {
+            await postAnswer(id, {
+                questionId: id,
+                content: "rejected",
+                isRejected: true,
+                team: "6-12",
+            });
+        } catch (e) {
+            console.log(e.message);
+        }
         setHasAnswer(true);
         setIsEdit(false);
         setRendering(!rendering);
         setDropdownOpen(false);
     };
 
-    const onPostAnswer = (questionId, answerData) => {
-        postAnswer(questionId, answerData);
+    const onPostAnswer = async (questionId, answerData) => {
+        try {
+            await postAnswer(questionId, answerData);
+        } catch (e) {
+            console.log(e.message);
+        }
         setHasAnswer(true);
         setIsEdit(false);
         setRendering(!rendering);
     };
-    const onEditAnswer = (answerId, editAnswerData) => {
-        editAnswer(answerId, editAnswerData);
+
+    const onEditAnswer = async (answerId, editAnswerData) => {
+        try {
+            await editAnswer(answerId, editAnswerData);
+        } catch (e) {
+            console.log(e.message);
+        }
         setHasAnswer(true);
         setIsEdit(false);
         setRendering(!rendering);
@@ -139,6 +152,4 @@ const FeedCardAnswer = ({
             <Reactions like={like} dislike={dislike} />
         </div>
     );
-};
-
-export default FeedCardAnswer;
+}

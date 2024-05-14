@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import "../../styles/QuestionList.css";
 
 import { getQuestionList } from "../../api/api";
-import FeedCard from "./FeedCard";
+import FeedCard from "./post/FeedCard";
 
-const QuestionList = ({ userData, id , QuestionList}) => {
+export default function QuestionList({ userData, id, QuestionList }) {
     const [questions, setQuestions] = useState([]);
     const [nextPage, setNextPage] = useState("");
     const [loading, setLoading] = useState(false);
@@ -58,6 +58,4 @@ const QuestionList = ({ userData, id , QuestionList}) => {
             )}
         </div>
     );
-};
-
-export default QuestionList;
+}
